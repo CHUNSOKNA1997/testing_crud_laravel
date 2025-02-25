@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EmployeeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/student', [StudentController::class, 'index']) -> name('students.index');
+
+Route::get('/employee', [EmployeeController::class, 'index']) -> name('employees.index');
